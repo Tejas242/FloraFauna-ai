@@ -1,5 +1,5 @@
 import {useState} from "react";
-import "./Uploader.css";
+import "./uploader.css";
 import { MdCloudUpload, MdDelete } from "react-icons/md";
 import {AiFillFileImage} from "react-icons/ai";
 import { getBase64 } from "../../helpers/imageHelper";
