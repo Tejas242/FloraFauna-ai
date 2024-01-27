@@ -2,6 +2,7 @@ import { useState } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { getBase64 } from "../helpers/imageHelper";
 import "./SpeciesInfo.css"; // Import your CSS file
+import prompt from "../assets/prompt";
 
 const SpeciesInfo = () => {
   const genAI = new GoogleGenerativeAI(import.meta.env.VITE_API_KEY);
@@ -11,8 +12,6 @@ const SpeciesInfo = () => {
   const [aiResponse, setResponse] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const prompt = `Analyze the plant/animal in the uploaded image and provide the following information in JSON format: - Most likely species (scientific name, common names, brief description(in list), confidence level) \n - Overall appearance \n - Distinguishing features \n - Habitat \n - Geographic location \n - Links to additional resources (as title and link)(Wikipedia, species databases, field guides)`;
-
   async function run() {
     setLoading(true);
     setResponse("");
@@ -20,10 +19,11 @@ const SpeciesInfo = () => {
     const result = await model.generateContent([prompt, imageInlineData]);
     const response = await result.response;
     const text = await response.text();
-    const jsonStart = text.indexOf("{");
-    const jsonEnd = text.lastIndexOf("}");
-    const jsonText = text.substring(jsonStart, jsonEnd + 1);
-    setResponse(JSON.parse(jsonText));
+    // const jsonStart = text.indexOf("{");
+    // const jsonEnd = text.lastIndexOf("}");
+    // const jsonText = text.substring(jsonStart, jsonEnd + 1);
+    console.log(JSON.parse(text));
+    setResponse(JSON.parse(text));
     setLoading(false);
   }
 
@@ -65,7 +65,6 @@ const SpeciesInfo = () => {
       {image && <img src={image} className="uploaded-image" />}
 
       {loading && !aiResponse && <p className="loading-message">Loading ...</p>}
-
       {aiResponse && (
         <div className="response-container">
           <div className="species-info">
@@ -93,7 +92,11 @@ const SpeciesInfo = () => {
             <p>{aiResponse.overall_appearance}</p>
 
             <h2>Distinguishing Features:</h2>
-            <p>{aiResponse.distinguishing_features}</p>
+            <ul>
+              {aiResponse.distinguishing_features.map((desc, index) => (
+                <li key={index}>{desc}</li>
+              ))}
+            </ul>
 
             <h2>Habitat:</h2>
             <p>{aiResponse.habitat}</p>
