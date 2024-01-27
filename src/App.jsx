@@ -1,12 +1,12 @@
 
 import './App.css'
-import SpeciesInfoViewer from './components/SpeciesInfoViewer'
+import SpeciesInfo from './components/SpeciesInfo'
 
 function App() {
 
   return (
     <>
-      <SpeciesInfoViewer />
+      <SpeciesInfo />
     </>
   )
 }
