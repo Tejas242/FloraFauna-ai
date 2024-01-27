@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { getBase64 } from "../helpers/imageHelper";
-import "./SpeciesInfo.css"; // Import your CSS file
+import "./speciesInfo.css"; // Import your CSS file
 import prompt from "../assets/prompt";
 
 const SpeciesInfo = () => {
