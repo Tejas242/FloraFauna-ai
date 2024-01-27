@@ -1,0 +1,44 @@
+.species-info-container {
+    padding: 20px;
+}
+
+.upload-section {
+    margin-bottom: 20px;
+}
+
+.uploaded-image {
+    width: 30%;
+    margin-top: 20px;
+}
+
+.loading-message {
+    margin-top: 20px;
+}
+
+.response-container {
+    margin-top: 20px;
+}
+
+.species-info {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.species-info h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.species-info p {
+    margin-bottom: 5px;
+}
+
+.species-info ul {
+    margin-left: 20px;
+}
+
+.species-info ul li {
+    list-style-type: disc;
+}
