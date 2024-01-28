@@ -121,7 +121,7 @@ const SpeciesInfo = () => {
             </ul>
             <p>
               Confidence Level:{" "}
-              {aiResponse.most_likely_species.confidence_level}
+              {aiResponse.most_likely_species.confidence_level * 100 + "%"}
             </p>
             <h2>Overall Appearance:</h2>
             <p>{aiResponse.overall_appearance}</p>
