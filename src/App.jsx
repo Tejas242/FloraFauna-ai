@@ -6,10 +6,10 @@ import SpeciesInfo from './components/SpeciesInfo'
 function App() {
 
   return (
-    <>
+    <main>
       <SpeciesInfo />
       {/* <Uploader/> */}
-    </>
+    </main>
   )
 }
 
