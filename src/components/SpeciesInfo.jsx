@@ -22,13 +22,27 @@ const SpeciesInfo = () => {
     const result = await model.generateContent([prompt, imageInlineData]);
     const response = await result.response;
     const text = await response.text();
-    // const jsonStart = text.indexOf("{");
-    // const jsonEnd = text.lastIndexOf("}");
-    // const jsonText = text.substring(jsonStart, jsonEnd + 1);
-    console.log(JSON.parse(text));
-    setResponse(JSON.parse(text));
+
+    try {
+      // Attempt to parse JSON directly
+      const jsonData = JSON.parse(text);
+      setResponse(jsonData);
+    } catch (error) {
+      if (error instanceof SyntaxError) {
+        // Handle the case where JSON is enclosed in ```json {response} ``` (rare case)
+        const startIndex = text.indexOf("{");
+        const endIndex = text.lastIndexOf("}");
+        const jsonText = text.substring(startIndex, endIndex + 1);
+        setResponse(JSON.parse(jsonText));
+      } else {
+        // Handle other types of errors
+        console.error("Error parsing JSON:", error);
+      }
+    }
+
     setLoading(false);
   }
+
 
   const handleClick = () => {
     run();
