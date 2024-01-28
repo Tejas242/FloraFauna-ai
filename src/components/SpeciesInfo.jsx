@@ -3,6 +3,8 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import { getBase64 } from "../helpers/imageHelper";
 import "./speciesInfo.css"; // Import your CSS file
 import prompt from "../assets/prompt";
+import { MdCloudUpload, MdDelete } from "react-icons/md";
+import {AiFillFileImage} from "react-icons/ai";
 
 const SpeciesInfo = () => {
   const genAI = new GoogleGenerativeAI(import.meta.env.VITE_API_KEY);
@@ -11,6 +13,7 @@ const SpeciesInfo = () => {
   const [imageInlineData, setImageInlineData] = useState("");
   const [aiResponse, setResponse] = useState("");
   const [loading, setLoading] = useState(false);
+  const [fileName , setFileName] = useState("No Selected File")
 
   async function run() {
     setLoading(true);
@@ -59,8 +62,40 @@ const SpeciesInfo = () => {
   return (
     <div className="species-info-container">
       <div className="upload-section">
-        <input type="file" onChange={(e) => handleImageChange(e)} />
-        <button onClick={() => handleClick()}>Search</button>
+        {/* <input type="file" onChange={(e) => handleImageChange(e)} /> */}
+        <form 
+       onClick={ () => document.querySelector(".input-field").click()}>
+        <input type="file" accept="image/*" className="input-field" hidden
+        // onChange={(e) => handleImageChange(e)}
+        onChange={({target: {files}}) => {
+          files[0] && setFileName(files[0].name)
+          if(files){
+            handleImageChange({target: {files}})
+          }
+        }} />
+
+        {image ? 
+        <img src={image} width={300} height={300} alt={fileName} />
+        :
+        <>
+        <MdCloudUpload color='#1475cf' size={60}  />
+        <p>Browse Files to Upload</p>
+        </>
+        }
+      </form>
+
+      <section className="uploaded-row">
+        <AiFillFileImage color="#1475cf"/>
+
+        <span className="upload-content">
+          {fileName}
+          <MdDelete onClick = {() => {
+            setFileName("No Selected File")
+            setImage(null)
+          }} />
+        </span>
+      </section>
+        <button onClick={() => handleClick()} className="search-button">Search</button>
       </div>
       {image && <img src={image} className="uploaded-image" />}
 
