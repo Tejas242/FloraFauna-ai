@@ -26,8 +26,8 @@ const UploadSection = ({
               className="rounded-lg"
             />
           ) : (
-            <div className="border-2 border-cyan-800 w-full h-full bg-cyan-100  border-dotted rounded-lg py-12 cursor-pointer flex flex-col items-center">
-              <MdCloudUpload color="#1475cf" size={60} className="mb-4" />
+            <div className="border-2 border-green-600 w-full h-full bg-green-100  border-dotted rounded-lg py-12 cursor-pointer flex flex-col items-center">
+              <MdCloudUpload color="#16a34a" size={60} className="mb-4" />
               <input
                 type="file"
                 id="file-input"
@@ -50,7 +50,7 @@ const UploadSection = ({
      
         </form>
         <section className="flex items-center justify-center mb-6">
-        <AiFillFileImage color="#1475cf" className="mr-2" />
+        <AiFillFileImage color="#064e3b" className="mr-2" />
         <span className="upload-content text-left">
           {fileName}
           <MdDelete
@@ -65,7 +65,7 @@ const UploadSection = ({
      
       <button
         onClick={handleClick}
-        className="search-button bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        className="search-button bg-emerald-500 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
       >
         Search
       </button>

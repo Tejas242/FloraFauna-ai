@@ -73,7 +73,7 @@ const SpeciesInfo = () => {
   }
 
   return (
-    <div className="p-8">
+    <div className="p-8 rounded-md">
       <UploadSection
         fileName={fileName}
         setFileName={setFileName}

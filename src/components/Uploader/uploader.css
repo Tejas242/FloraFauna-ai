@@ -3,7 +3,7 @@ form{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 2px dashed #1475cf;
+    border: 2px dashed rgb(74 222 128);
     height: 300px;
     width: 500px;
     cursor: pointer;
@@ -17,7 +17,7 @@ form{
     align-items: center;
     padding: 15px 20px;
     border-radius: 5px;
-    background-color: #e9f0ff;
+    background-color: rgb(74 222 128);
 }
 
 .upload-content{

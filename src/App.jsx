@@ -1,18 +1,16 @@
 import './App.css'
-import SpeciesInfo from './components/SpeciesInfo'
-// import Uploader from './components/Uploader/Uploader'
-// import SpeciesInfo from './components/SpeciesInfo'
 import Header from './components/Header'
 import Hero from './components/Hero'
+import Footer from './components/Footer'
 
 
 function App() {
 
   return (
-    <main className='bg-cyan-100'>
-    
+    <main>
       <Header />
       <Hero />
+      <Footer/>
     </main>
     
   )

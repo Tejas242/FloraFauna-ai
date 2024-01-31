@@ -1,4 +1,4 @@
-import SpeciesInfo from './SpeciesInfo';
+
 
 const Hero = () => {
   return (
@@ -10,8 +10,9 @@ const Hero = () => {
         <p className="mt-4 text-lg text-opacity-75">
           Simply upload a photo and discover the wonders of nature.
         </p>
+       
       </div>
-      <SpeciesInfo />
+      
     </section>
   );
 };
