@@ -76,7 +76,11 @@
 
 // export default AIResponse;
 
+<<<<<<< HEAD
 
+=======
+import "./airesponse.css";
+>>>>>>> 3306299a2545e4ab1b48f9bcf616e7e6c901da14
 import { useEffect, useRef } from "react";
 import ScrollReveal from "scrollreveal";
 
@@ -98,7 +102,7 @@ const AIResponse = ({ aiResponse, loading }) => {
   }, []);
 
   return (
-    <div className="container mx-auto py-8 bg_pattern" ref={aiResponseRef}>
+    <div className="lg:container mx-auto py-8" ref={aiResponseRef}>
       {loading && !aiResponse && (
         <div className="text-center text-gray-600">
           <p className="text-lg">Loading ...</p>
@@ -106,7 +110,7 @@ const AIResponse = ({ aiResponse, loading }) => {
       )}
       {aiResponse && (
         <div className="bg-lime-100 rounded-lg shadow-md p-8">
-          <h2 className="text-2xl font-semibold mb-4">Most Likely Species:</h2>
+          <h2 className="text-xl font-semibold mb-4">Most Likely Species:</h2>
           <p className="text-gray-700 mb-2">
             Scientific Name: {aiResponse.most_likely_species.scientific_name}
           </p>
@@ -132,13 +136,15 @@ const AIResponse = ({ aiResponse, loading }) => {
           <div className="mt-4">
             <hr className="border-t-2 border-gray-300 mx-auto w-full" />
           </div>
-          <h2 className="text-2xl font-semibold mt-8">Overall Appearance:</h2>
+          <h2 className="text-xl font-semibold mt-8">Overall Appearance:</h2>
           <p className="text-gray-700 mb-4">{aiResponse.overall_appearance}</p>
           <div className="mt-4 pt-5">
             <hr className="border-t-2 border-gray-300 mx-auto w-full" />
           </div>
 
-          <h2 className="text-2xl font-semibold pt-5">Distinguishing Features:</h2>
+          <h2 className="text-xl font-semibold pt-5">
+            Distinguishing Features:
+          </h2>
           <ul className="list-disc list-inside mb-4">
             {aiResponse.distinguishing_features.map((desc, index) => (
               <li key={index} className="text-gray-700">
@@ -151,21 +157,21 @@ const AIResponse = ({ aiResponse, loading }) => {
             <hr className="border-t-2 border-gray-300 mx-auto w-full" />
           </div>
 
-          <h2 className="text-2xl font-semibold pt-5">Habitat:</h2>
+          <h2 className="text-xl font-semibold pt-5">Habitat:</h2>
           <p className="text-gray-700 mb-4">{aiResponse.habitat}</p>
 
           <div className="mt-4 pt-5">
             <hr className="border-t-2 border-gray-300 mx-auto w-full" />
           </div>
 
-          <h2 className="text-2xl font-semibold pt-5">Geographic Location:</h2>
+          <h2 className="text-xl font-semibold pt-5">Geographic Location:</h2>
           <p className="text-gray-700 mb-4">{aiResponse.geographic_location}</p>
 
           <div className="mt-4 pt-5">
             <hr className="border-t-2 border-gray-300 mx-auto w-full" />
           </div>
 
-          <h2 className="text-2xl font-semibold pt-5">
+          <h2 className="text-xl font-semibold pt-5">
             Links to Additional Resources:
           </h2>
           <ul className="list-disc list-inside">
