@@ -13,7 +13,7 @@ const SpeciesInfo = () => {
   const [imageInlineData, setImageInlineData] = useState("");
   const [aiResponse, setResponse] = useState("");
   const [loading, setLoading] = useState(false);
-  const [fileName , setFileName] = useState("No Selected File")
+  const [fileName, setFileName] = useState("No Selected File");
 
   async function run() {
     setLoading(true);
@@ -42,7 +42,6 @@ const SpeciesInfo = () => {
 
     setLoading(false);
   }
-
 
   const handleClick = () => {
     run();
@@ -76,7 +75,7 @@ const SpeciesInfo = () => {
   //to add animations use this bg_pattern
 
   return (
-    <div className="p-8 rounded-md"> 
+    <div className="mt-8">
       <UploadSection
         fileName={fileName}
         setFileName={setFileName}
@@ -85,7 +84,9 @@ const SpeciesInfo = () => {
         handleClick={handleClick}
         image={image}
       />
-      {image && <img src={image} className="mt-4 mx-auto w-90 h-80" />}
+      {image && (
+        <img src={image} className="mt-4 mx-auto min-w-300 min-h-400" />
+      )}
       <AIResponse aiResponse={aiResponse} loading={loading} />
     </div>
   );
