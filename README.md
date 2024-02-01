@@ -5,7 +5,6 @@ This web application leverages Generative AI to assist users in identifying and 
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
-- [Roadmap](#roadmap)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -31,28 +30,6 @@ To run the Species Identification App locally, follow these steps:
 - Create a `.env` file in root folder and add your gemini api key as `VITE_API_KEY=<API_KEY>`
 - Start the development server with `npm run dev`.
 - Access the app in your web browser at `http://localhost:3000`.
-
-## Roadmap
-
-### Implemented
-- [x] Integration with Gemini API for species identification.
-- [x] User-friendly interface for image upload and species identification.
-- [x] Species identification based on image upload.
-- [x] Initial setup of React framework for app development.
-- [x] Basic styling and layout for the app interface.
-
-### To be Implemented
-- [ ] Display of more educational content about identified species.
-- [ ] Responsive design for seamless user experience.
-- [ ] Integration with external databases for additional species information.
-- [ ] User accounts and personalized species identification history.
-- [ ] Social sharing features to encourage user engagement and knowledge sharing.
-- [ ] Advanced search and filtering options for species identification results.
-- [ ] Integration with mapping services to provide location-based species information.
-- [ ] Gamification elements to incentivize user participation in species identification and conservation efforts.
-- [ ] 3D Model Gallery based on availibility
-- [ ] Accessibility enhancements to ensure the app is usable by all users, including those with disabilities.
-- [ ] Offline functionality for species identification in areas with limited internet connectivity. (Not using API but a locally running model)
 
 ## Contributing
 We welcome contributions from the community to enhance the functionality and features of the App. To contribute, please follow these guidelines:
