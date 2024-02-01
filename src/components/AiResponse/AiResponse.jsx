@@ -1,6 +1,8 @@
+// import '../animations.css';
+
 const AIResponse = ({ aiResponse, loading }) => {
   return (
-    <div className="container mx-auto py-8">
+    <div className="container mx-auto py-8 bg_pattern">
       {loading && !aiResponse && (
         <div className="text-center text-gray-600">
           <p className="text-lg">Loading ...</p>

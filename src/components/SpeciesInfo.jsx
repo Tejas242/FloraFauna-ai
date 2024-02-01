@@ -76,7 +76,7 @@ const SpeciesInfo = () => {
   //to add animations use this bg_pattern
 
   return (
-    <div className="p-8 rounded-md "> 
+    <div className="p-8 rounded-md"> 
       <UploadSection
         fileName={fileName}
         setFileName={setFileName}
