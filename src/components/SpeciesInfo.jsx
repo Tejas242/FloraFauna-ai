@@ -85,7 +85,7 @@ const SpeciesInfo = () => {
         handleClick={handleClick}
         image={image}
       />
-      {image && <img src={image} className="mt-4 mx-auto" />}
+      {image && <img src={image} className="mt-4 mx-auto w-90 h-80" />}
       <AIResponse aiResponse={aiResponse} loading={loading} />
     </div>
   );
