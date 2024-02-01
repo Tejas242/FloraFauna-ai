@@ -4,23 +4,31 @@ import Hero from './components/Hero'
 import Footer from './components/Footer'
 import { useEffect, useState } from "react";
 import ScrollReveal from "scrollreveal";
+import bg from './assets/Plant.jpg'
+import Output from './components/Output';
+import { Routes , Route } from 'react-router-dom'
 
 
 function App() {
-  // const [showScrollUp, setShowScrollUp] = useState(false);
-  // const sections = document.querySelectorAll("section[id]");
-
-  // sr.reveal(`.footer-container`, { origin: "bottom", delay: 500 });
-  // sr.reveal(`.species-info-container`, { origin: "bottom", delay: 500 });
+  const style = {
+    backgroundImage: `url(${bg})`,
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+  }
 
   return (
-    <main>
-      
+    <>
+    <main className='h-screen w-screen' style={style}>
       <Header />
-      <Hero />
+      <Routes>
+        <Route path="*" element = {<Hero />}  />
+        <Route path="output" element = {<Output />}  />
+      </Routes>
+      <Output/>
       <Footer/>
     </main>
-    
+    </>
   )
 }
 

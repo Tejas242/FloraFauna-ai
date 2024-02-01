@@ -14,9 +14,9 @@ const UploadSection = ({
 
   return (
 
-    <div className="w-full max-w-md mx-auto text-center">
+    <div className="w-full max-w-md mx-auto text-center" >
       <form onClick={() => document.querySelector(".input-field").click()}>
-        <div className="flex flex-col items-center justify-center w-full mb-6">
+        <div className="flex flex-col items-center justify-center w-full mb-6 backdrop-blur-sm">
           {image ? (
             <img
               src={image}
@@ -26,8 +26,8 @@ const UploadSection = ({
               className="rounded-lg"
             />
           ) : (
-            <div className="border-2 border-green-600 w-full h-full bg-green-100  border-dotted rounded-lg py-12 cursor-pointer flex flex-col items-center">
-              <MdCloudUpload color="#16a34a" size={60} className="mb-4" />
+            <div className="border-2 border-white w-full h-full   border-dotted rounded-lg py-12 cursor-pointer flex flex-col items-center">
+              <MdCloudUpload color="#06b6d4" size={60} className="mb-4" />
               <input
                 type="file"
                 id="file-input"
@@ -50,7 +50,7 @@ const UploadSection = ({
      
         </form>
         <section className="flex items-center justify-center mb-6">
-        <AiFillFileImage color="#064e3b" className="mr-2" />
+        <AiFillFileImage color="#1e293b" className="mr-2" />
         <span className="upload-content text-left">
           {fileName}
           <MdDelete
@@ -58,14 +58,14 @@ const UploadSection = ({
               setFileName("No Selected File");
               setImage(null);
             }}
-            className="float-right cursor-pointer hover:text-lime-900"
+            className="float-right cursor-pointer hover:text-slate-700"
           />
         </span>
       </section>
      
       <button
         onClick={handleClick}
-        className="search-button bg-violet-500 hover:bg-violet-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        className="search-button bg-cyan-500 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
       >
         Search
       </button>

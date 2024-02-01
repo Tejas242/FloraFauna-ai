@@ -1,7 +1,11 @@
 import { useEffect } from "react";
 import ScrollReveal from "scrollreveal";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+
+  const nvgate = useNavigate()
+
   useEffect(() => {
     const sr = ScrollReveal({
       origin: "top",
@@ -18,13 +22,19 @@ const Hero = () => {
   return (
     <section className="relative h-screen hero">
       <div className="container mx-auto pt-20 px-4 text-center hero__content">
-        <h1 className="text-4xl font-bold hero__title">
+        <h1 className="text-4xl font-bold hero__title text-white">
           Identify Flora & Fauna with AI
         </h1>
-        <p className="mt-4 text-lg text-opacity-75 text-center hero__title">
+        <p className="mt-4 text-lg text-opacity-75 text-center hero__title text-white">
          Every species has a story to tell
         </p>
       </div>
+      <div className="h-screen flex items-center justify-center hero__title">
+      <button className='w-[10rem] py-[6px] rounded-3xl bg-[#98EC65] hover:bg-[#81E047] mt-[1rem]' onClick={()=> nvgate('output')} >
+      Explore Now
+      </button>
+      </div>
+      
     </section>
   );
 };
