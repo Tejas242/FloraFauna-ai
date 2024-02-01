@@ -130,10 +130,16 @@ const AIResponse = ({ aiResponse, loading }) => {
             {Math.round(aiResponse.most_likely_species.confidence_level * 100) +
               "%"}
           </p>
+          <div className="mt-4">
+            <hr className="border-t-2 border-gray-300 mx-auto w-full" />
+          </div>
           <h2 className="text-2xl font-semibold mt-8">Overall Appearance:</h2>
           <p className="text-gray-700 mb-4">{aiResponse.overall_appearance}</p>
+          <div className="mt-4 pt-5">
+            <hr className="border-t-2 border-gray-300 mx-auto w-full" />
+          </div>
 
-          <h2 className="text-2xl font-semibold">Distinguishing Features:</h2>
+          <h2 className="text-2xl font-semibold pt-5">Distinguishing Features:</h2>
           <ul className="list-disc list-inside mb-4">
             {aiResponse.distinguishing_features.map((desc, index) => (
               <li key={index} className="text-gray-700">
@@ -142,13 +148,25 @@ const AIResponse = ({ aiResponse, loading }) => {
             ))}
           </ul>
 
-          <h2 className="text-2xl font-semibold">Habitat:</h2>
+          <div className="mt-4 pt-5">
+            <hr className="border-t-2 border-gray-300 mx-auto w-full" />
+          </div>
+
+          <h2 className="text-2xl font-semibold pt-5">Habitat:</h2>
           <p className="text-gray-700 mb-4">{aiResponse.habitat}</p>
 
-          <h2 className="text-2xl font-semibold">Geographic Location:</h2>
+          <div className="mt-4 pt-5">
+            <hr className="border-t-2 border-gray-300 mx-auto w-full" />
+          </div>
+
+          <h2 className="text-2xl font-semibold pt-5">Geographic Location:</h2>
           <p className="text-gray-700 mb-4">{aiResponse.geographic_location}</p>
 
-          <h2 className="text-2xl font-semibold">
+          <div className="mt-4 pt-5">
+            <hr className="border-t-2 border-gray-300 mx-auto w-full" />
+          </div>
+
+          <h2 className="text-2xl font-semibold pt-5">
             Links to Additional Resources:
           </h2>
           <ul className="list-disc list-inside">
