@@ -8,3 +8,9 @@
 html{
   background-color: #86efac;
 }
+
+
+/* whole webpage  */
+html, body {
+  font-family: 'Unbounded', sans-serif;
+}

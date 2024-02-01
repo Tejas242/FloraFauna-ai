@@ -4,6 +4,7 @@ import { getBase64 } from "../helpers/imageHelper";
 import UploadSection from "./Uploader/Uploader";
 import AIResponse from "./AiResponse/AiResponse";
 import prompt from "../assets/prompt";
+// import './animations.css';
 
 const SpeciesInfo = () => {
   const genAI = new GoogleGenerativeAI(import.meta.env.VITE_API_KEY);
@@ -72,8 +73,10 @@ const SpeciesInfo = () => {
     };
   }
 
+  //to add animations use this bg_pattern
+
   return (
-    <div className="p-8 rounded-md">
+    <div className="p-8 rounded-md "> 
       <UploadSection
         fileName={fileName}
         setFileName={setFileName}

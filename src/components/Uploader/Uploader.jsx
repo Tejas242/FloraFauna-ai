@@ -58,14 +58,14 @@ const UploadSection = ({
               setFileName("No Selected File");
               setImage(null);
             }}
-            className="float-right cursor-pointer"
+            className="float-right cursor-pointer hover:text-lime-900"
           />
         </span>
       </section>
      
       <button
         onClick={handleClick}
-        className="search-button bg-emerald-500 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        className="search-button bg-violet-500 hover:bg-violet-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
       >
         Search
       </button>

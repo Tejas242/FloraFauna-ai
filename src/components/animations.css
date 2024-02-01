@@ -1,0 +1,49 @@
+.bg_pattern {
+    width: 100%;
+    background: rgba(208, 248, 213, 0.705);
+    overflow: hidden;
+}
+
+.bg_pattern::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, #15803d 10%, transparent 20%),
+        radial-gradient(circle, transparent 10%, #22c55ed3 20%);
+    background-size: 30px 30px;
+    /* Adjust the size of the pattern */
+    animation: moveBackground 12s linear infinite;
+    /* Adjust the animation duration and timing function */
+}
+
+/* animation for hero background  */
+@keyframes moveBackground {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(20%, 20%);
+    }
+}
+
+/* website selection  */
+::selection {
+    background: #22c55ed3;
+    color: #fff !important;
+    /* WebKit/Blink Browsers */
+}
+
+::-moz-selection {
+    background: #22c55ed3;
+    color: #fff !important;
+    /* Gecko Browsers */
+}
+
+/* highlight strong  */
+strong {
+    filter: brightness(0.6)
+}
