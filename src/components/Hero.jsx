@@ -21,6 +21,9 @@ const Hero = () => {
         <h1 className="text-4xl font-bold hero__title">
           Identify Flora & Fauna with AI
         </h1>
+        <p className="mt-4 text-lg text-opacity-75 text-center hero__title">
+         Every species has a story to tell
+        </p>
       </div>
     </section>
   );

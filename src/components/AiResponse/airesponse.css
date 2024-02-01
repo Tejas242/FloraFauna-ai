@@ -1,0 +1,12 @@
+@media screen and (max-width: 1150px) {
+    .bg_pattern {
+      position: fixed;
+      top: -100%;
+      left: 0;
+      backdrop-filter: blur(8px);
+      padding-block: 1.8rem 5rem;
+      width: 100%;
+      text-align: space-between;
+      transition: top 0.4s;
+    }
+  }
