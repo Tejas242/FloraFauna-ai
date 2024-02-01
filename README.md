@@ -15,11 +15,11 @@ This web application leverages Generative AI to assist users in identifying and 
 - __Responsive Design__: The app is optimized for various screen sizes and devices, ensuring a seamless user experience across desktop and mobile platforms.
 
 ## Technologies Used
-__Gemini API__: Provides powerful Generative AI capabilities for species identification.
-__React__: A fast and efficient JavaScript Library for building modern web applications.
-__JavaScript__ : The primary programming languages used for app development.
-__HTML/CSS__: Standard web technologies for structuring and styling the user interface.
-__Git/GitHub__: Version control and collaboration platform for managing the project codebase.
+- __Gemini API__: Provides powerful Generative AI capabilities for species identification.
+- __React__: A fast and efficient JavaScript Library for building modern web applications.
+- __JavaScript__ : The primary programming languages used for app development.
+- __HTML/CSS__: Standard web technologies for structuring and styling the user interface.
+- __Git/GitHub__: Version control and collaboration platform for managing the project codebase.
 
 ## Getting Started
 To run the Species Identification App locally, follow these steps:
