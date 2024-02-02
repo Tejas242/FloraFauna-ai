@@ -1,11 +1,22 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef , useState } from "react";
 import { useLocation } from "react-router-dom";
 import ScrollReveal from "scrollreveal";
+import ClipLoader from "react-spinners/ClipLoader";
 
 
 const AIResponse = () => {
   const aiResponseRef = useRef(null);
   const { aiResponse, image } = useLocation().state;
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 1000); // Set loading time to 2 seconds
+
+    return () => clearTimeout(timeout);
+  }, []);
+
 
   useEffect(() => {
     const sr = ScrollReveal({
@@ -21,6 +32,14 @@ const AIResponse = () => {
     });
   }, []);
 
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <ClipLoader size={50} color={"#123abc"} loading={loading} />
+      </div>
+    );
+  }
+
   return (
     <div className="lg:container mx-auto py-8" ref={aiResponseRef}>
       {!aiResponse && (
@@ -30,7 +49,7 @@ const AIResponse = () => {
       )}
       {aiResponse && (
         <div className="bg-lime-100 rounded-lg shadow-md p-8">
-          <img src={image}/>
+          <img src={image} className="w-100 h-80 pb-10" />
           <h2 className="text-xl font-semibold mb-4">Most Likely Species:</h2>
           <p className="text-gray-700 mb-2">
             Scientific Name: {aiResponse.most_likely_species.scientific_name}

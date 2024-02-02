@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState , useEffect } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { getBase64 } from "../helpers/imageHelper";
 import UploadSection from "./Uploader/Uploader";
 import { useNavigate } from "react-router-dom";
 import prompt from "@/assets/prompt";
+import ClipLoader from "react-spinners/ClipLoader";
 
 const SpeciesInfo = () => {
   const genAI = new GoogleGenerativeAI(import.meta.env.VITE_API_KEY);
@@ -12,6 +13,16 @@ const SpeciesInfo = () => {
   const [image, setImage] = useState("");
   const [imageInlineData, setImageInlineData] = useState("");
   const [fileName, setFileName] = useState("No Selected File");
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 1000); // Set loading time to 2 seconds
+
+    return () => clearTimeout(timeout);
+  }, []);
+
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -64,9 +75,19 @@ const SpeciesInfo = () => {
   }
 
   const handleClick = async () => {
+    setLoading(true); // Set loading to true when the search button is clicked
     const aiResponse = await run(); // Call run and await response
+    setLoading(false); // Set loading to false once the AI response has been received
     navigate("/results", { state: { aiResponse, image } }); // Navigate with response
   };
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <ClipLoader size={50} color={"#ffffff"} loading={loading} />
+      </div>
+    );
+  }
 
   return (
     <div className="mt-8">
