@@ -1,8 +1,6 @@
 import { AiFillFileImage } from "react-icons/ai";
 import { MdCloudUpload, MdDelete } from "react-icons/md";
 
-import PropTypes from "prop-types";
-
 const UploadSection = ({
   fileName,
   setFileName,
@@ -13,8 +11,7 @@ const UploadSection = ({
 }) => {
 
   return (
-
-    <div className="w-full max-w-md mx-auto text-center" >
+    <div className="w-full max-w-md mx-auto text-center">
       <form onClick={() => document.querySelector(".input-field").click()}>
         <div className="flex flex-col items-center justify-center w-full mb-6 backdrop-blur-sm">
           {image ? (
@@ -47,9 +44,8 @@ const UploadSection = ({
             </div>
           )}
         </div>
-     
-        </form>
-        <section className="flex items-center justify-center mb-6">
+      </form>
+      <section className="flex items-center justify-center mb-6">
         <AiFillFileImage color="#1e293b" className="mr-2" />
         <span className="upload-content text-left">
           {fileName}
@@ -62,22 +58,8 @@ const UploadSection = ({
           />
         </span>
       </section>
-     
-      <button
-        onClick={handleClick}
-        className="search-button bg-cyan-500 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-      >
-        Search
-      </button>
-
-      
     </div>
-    
-   
   );
 };
-
-  
-
 
 export default UploadSection;

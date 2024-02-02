@@ -22,6 +22,7 @@
 
 // export default Footer;
 
+<<<<<<< HEAD
 
 import { useEffect, useRef } from "react";
 import ScrollReveal from "scrollreveal";
@@ -32,6 +33,15 @@ const Footer = () => {
   return (
 
     <div className="bg-slate-950">  
+=======
+import { useEffect, useRef } from "react";
+import ScrollReveal from "scrollreveal";
+import SpeciesInfo from "./SpeciesInfo";
+
+const Footer = () => {
+  return (
+    <div className="bg-slate-950">
+>>>>>>> 05e88705248d076a5e00bcd0e4a13fa2e49352d6
       {/* ... (your existing UploadSection and AIResponse components) */}
       <footer className="mt-12 text-center text-gray-500">
         <p>&copy; 2024 FloraFauna.ai . All rights reserved.</p>

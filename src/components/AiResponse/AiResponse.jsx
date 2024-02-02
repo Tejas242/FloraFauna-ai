@@ -76,12 +76,17 @@
 
 // export default AIResponse;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 05e88705248d076a5e00bcd0e4a13fa2e49352d6
 import { useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import ScrollReveal from "scrollreveal";
 
-const AIResponse = ({ aiResponse, loading }) => {
+const AIResponse = () => {
   const aiResponseRef = useRef(null);
+  const { aiResponse } = useLocation().state;
 
   useEffect(() => {
     const sr = ScrollReveal({
@@ -99,7 +104,7 @@ const AIResponse = ({ aiResponse, loading }) => {
 
   return (
     <div className="lg:container mx-auto py-8" ref={aiResponseRef}>
-      {loading && !aiResponse && (
+      {!aiResponse && (
         <div className="text-center text-gray-600">
           <p className="text-lg">Loading ...</p>
         </div>
