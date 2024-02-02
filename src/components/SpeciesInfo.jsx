@@ -2,50 +2,16 @@ import { useState } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { getBase64 } from "../helpers/imageHelper";
 import UploadSection from "./Uploader/Uploader";
-import AIResponse from "./AiResponse/AiResponse";
-import prompt from "../assets/prompt";
-// import './animations.css';
+import { useNavigate } from "react-router-dom";
+import prompt from "@/assets/prompt";
 
 const SpeciesInfo = () => {
   const genAI = new GoogleGenerativeAI(import.meta.env.VITE_API_KEY);
+  const navigate = useNavigate();
 
   const [image, setImage] = useState("");
   const [imageInlineData, setImageInlineData] = useState("");
-  const [aiResponse, setResponse] = useState("");
-  const [loading, setLoading] = useState(false);
   const [fileName, setFileName] = useState("No Selected File");
-
-  async function run() {
-    setLoading(true);
-    setResponse("");
-    const model = genAI.getGenerativeModel({ model: "gemini-pro-vision" });
-    const result = await model.generateContent([prompt, imageInlineData]);
-    const response = await result.response;
-    const text = await response.text();
-
-    try {
-      // Attempt to parse JSON directly
-      const jsonData = JSON.parse(text);
-      setResponse(jsonData);
-    } catch (error) {
-      if (error instanceof SyntaxError) {
-        // Handle the case where JSON is enclosed in ```json {response} ``` (rare case)
-        const startIndex = text.indexOf("{");
-        const endIndex = text.lastIndexOf("}");
-        const jsonText = text.substring(startIndex, endIndex + 1);
-        setResponse(JSON.parse(jsonText));
-      } else {
-        // Handle other types of errors
-        console.error("Error parsing JSON:", error);
-      }
-    }
-
-    setLoading(false);
-  }
-
-  const handleClick = () => {
-    run();
-  };
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -72,7 +38,35 @@ const SpeciesInfo = () => {
     };
   }
 
-  //to add animations use this bg_pattern
+  async function run() {
+    const model = genAI.getGenerativeModel({ model: "gemini-pro-vision" });
+    const result = await model.generateContent([prompt, imageInlineData]);
+    const response = await result.response;
+    const text = await response.text();
+
+    try {
+      // Attempt to parse JSON directly
+      const jsonData = JSON.parse(text);
+      console.log(jsonData);
+      return jsonData;
+    } catch (error) {
+      if (error instanceof SyntaxError) {
+        // Handle the case where JSON is enclosed in ```json {response} ``` (rare case)
+        const startIndex = text.indexOf("{");
+        const endIndex = text.lastIndexOf("}");
+        const jsonData = JSON.parse(text.substring(startIndex, endIndex + 1));
+        return jsonData;
+      } else {
+        // Handle other types of errors
+        console.error("Error parsing JSON:", error);
+      }
+    }
+  }
+
+  const handleClick = async () => {
+    const aiResponse = await run(); // Call run and await response
+    navigate("/results", { state: { aiResponse } }); // Navigate with response
+  };
 
   return (
     <div className="mt-8">
@@ -84,10 +78,15 @@ const SpeciesInfo = () => {
         handleClick={handleClick}
         image={image}
       />
-      {image && (
+      {/* {image && (
         <img src={image} className="mt-4 mx-auto min-w-300 min-h-400" />
-      )}
-      <AIResponse aiResponse={aiResponse} loading={loading} />
+      )} */}
+      <button
+        onClick={handleClick}
+        className="search-button bg-cyan-500 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+      >
+        Search
+      </button>
     </div>
   );
 };
