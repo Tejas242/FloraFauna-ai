@@ -76,10 +76,6 @@
 
 // export default AIResponse;
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 05e88705248d076a5e00bcd0e4a13fa2e49352d6
 import { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import ScrollReveal from "scrollreveal";
