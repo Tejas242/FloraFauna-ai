@@ -11,9 +11,10 @@ const UploadSection = ({
 }) => {
 
   return (
+
     <div className="w-full max-w-md mx-auto text-center">
       <form onClick={() => document.querySelector(".input-field").click()}>
-        <div className="flex flex-col items-center justify-center w-full mb-6 backdrop-blur-sm">
+        <div className="flex items-center justify-center w-full mb-6 backdrop-blur-lg">
           {image ? (
             <img
               src={image}
@@ -23,7 +24,7 @@ const UploadSection = ({
               className="rounded-lg"
             />
           ) : (
-            <div className="border-2 border-white w-full h-full   border-dotted rounded-lg py-12 cursor-pointer flex flex-col items-center">
+            <div className="border-2 border-white w-full h-full border-dotted rounded-lg py-12 cursor-pointer flex flex-col items-center">
               <MdCloudUpload color="#06b6d4" size={60} className="mb-4" />
               <input
                 type="file"
@@ -38,7 +39,7 @@ const UploadSection = ({
                   }
                 }}
               />
-              <label className="cursor-pointer block mb-2 text-sm font-medium text-gray-900">
+              <label className="cursor-pointer block mb-2 text-sm font-medium text-white">
                 Browse Files to Upload
               </label>
             </div>

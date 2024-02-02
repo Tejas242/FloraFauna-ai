@@ -3,7 +3,9 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
-import AIResponse from "./components/AiResponse/AiResponse.jsx";
+
+import Output from "./components/Output.jsx";
+import AIResponse from "./components/AiResponse.jsx";
 
 const router = createBrowserRouter([
   {
@@ -11,8 +13,12 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
+    path: "output",
+    element: <Output />,
+  },
+  {
     path: "results",
-    element: <AIResponse />,
+    element: <AIResponse/>,
   },
 ]);
 

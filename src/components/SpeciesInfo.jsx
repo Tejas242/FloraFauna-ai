@@ -65,7 +65,7 @@ const SpeciesInfo = () => {
 
   const handleClick = async () => {
     const aiResponse = await run(); // Call run and await response
-    navigate("/results", { state: { aiResponse } }); // Navigate with response
+    navigate("/results", { state: { aiResponse, image } }); // Navigate with response
   };
 
   return (
@@ -81,12 +81,14 @@ const SpeciesInfo = () => {
       {/* {image && (
         <img src={image} className="mt-4 mx-auto min-w-300 min-h-400" />
       )} */}
+      <div className="flex justify-center items-center">
       <button
         onClick={handleClick}
         className="search-button bg-cyan-500 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
       >
         Search
       </button>
+      </div>
     </div>
   );
 };
