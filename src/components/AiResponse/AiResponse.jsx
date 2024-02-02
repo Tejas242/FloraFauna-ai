@@ -76,11 +76,8 @@
 
 // export default AIResponse;
 
-<<<<<<< HEAD
 
-=======
 import "./airesponse.css";
->>>>>>> 3306299a2545e4ab1b48f9bcf616e7e6c901da14
 import { useEffect, useRef } from "react";
 import ScrollReveal from "scrollreveal";
 
