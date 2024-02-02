@@ -1,10 +1,7 @@
 import { useEffect } from "react";
 import ScrollReveal from "scrollreveal";
-import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
-
-  const nvgate = useNavigate()
 
   useEffect(() => {
     const sr = ScrollReveal({
@@ -30,8 +27,8 @@ const Hero = () => {
         </p>
       </div>
       <div className="h-screen flex items-center justify-center hero__title">
-      <button className='w-[10rem] py-[6px] rounded-3xl bg-[#98EC65] hover:bg-[#81E047] mt-[1rem]' onClick={()=> nvgate('output')} >
-      Explore Now
+      <button className='w-[10rem] py-[6px] rounded-3xl bg-[#98EC65] hover:bg-[#81E047] mt-[1rem]' >
+        <a href="#output">Explore Now</a>
       </button>
       </div>
       

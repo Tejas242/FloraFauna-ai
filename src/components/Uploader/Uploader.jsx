@@ -48,14 +48,14 @@ const UploadSection = ({
       </form>
       <section className="flex items-center justify-center mb-6">
         <AiFillFileImage color="#1e293b" className="mr-2" />
-        <span className="upload-content text-left">
+        <span className="upload-content text-left text-white">
           {fileName}
           <MdDelete
             onClick={() => {
               setFileName("No Selected File");
               setImage(null);
             }}
-            className="float-right cursor-pointer hover:text-slate-700"
+            className="float-right cursor-pointer text-slate-500 hover:text-slate-700"
           />
         </span>
       </section>
