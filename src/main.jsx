@@ -6,7 +6,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import './index.css'
-import AIResponse from './components/AiResponse/AiResponse.jsx';
+import Output from './components/Output.jsx';
 
 const router = createBrowserRouter([
   {
@@ -14,8 +14,8 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "airesponse",
-    element: <AIResponse />,
+    path: "output",
+    element: <Output/>,
   },
 ]);
 
