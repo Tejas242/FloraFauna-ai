@@ -5,6 +5,9 @@ const Footer = () => {
       <footer className="mt-12 text-center text-gray-500 pt-5 pb-5" >
         <p>&copy; 2024 FloraFauna.ai . All rights reserved.</p>
         <p>Built with love using React and Google Generative AI.</p>
+        {/* <div className="flex items-right justify-between">
+        <a href="#header">Scroll Up</a>
+        </div> */}
       </footer>
     </div>
   );

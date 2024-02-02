@@ -27,7 +27,7 @@ const Hero = () => {
         </p>
       </div>
       <div className="h-screen flex items-center justify-center hero__title">
-      <button className='w-[10rem] py-[6px] rounded-3xl bg-[#98EC65] hover:bg-[#81E047] mt-[1rem]' >
+      <button className='w-[10rem] py-[20px] px-[10px] rounded-3xl bg-[#98EC65] hover:bg-[#81E047] mt-[1rem]' >
         <a href="#output">Explore Now</a>
       </button>
       </div>
