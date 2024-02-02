@@ -2,12 +2,21 @@ import { useEffect, useRef , useState } from "react";
 import { useLocation } from "react-router-dom";
 import ScrollReveal from "scrollreveal";
 import ClipLoader from "react-spinners/ClipLoader";
+import bg1 from '../assets/Animal.jpg'
+
 
 
 const AIResponse = () => {
   const aiResponseRef = useRef(null);
   const { aiResponse, image } = useLocation().state;
   const [loading, setLoading] = useState(true);
+
+  const style = {
+      backgroundImage: `url(${bg1})`,
+      backgroundPosition: 'center',
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+    }
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -41,6 +50,7 @@ const AIResponse = () => {
   }
 
   return (
+    <main style={style}>
     <div className="lg:container mx-auto py-8" ref={aiResponseRef}>
       {!aiResponse && (
         <div className="text-center text-gray-600">
@@ -48,7 +58,7 @@ const AIResponse = () => {
         </div>
       )}
       {aiResponse && (
-        <div className="bg-lime-100 rounded-lg shadow-md p-8">
+        <div className="backdrop-blur-sm rounded-lg shadow-md p-8">
           <img src={image} className="w-100 h-80 pb-10" />
           <h2 className="text-xl font-semibold mb-4">Most Likely Species:</h2>
           <p className="text-gray-700 mb-2">
@@ -131,6 +141,7 @@ const AIResponse = () => {
         </div>
       )}
     </div>
+    </main>
   );
 };
 
