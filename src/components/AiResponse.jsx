@@ -41,8 +41,8 @@ const AIResponse = () => {
         </div>
       )}
       {aiResponse && (
-        <div className="backdrop-blur-sm rounded-lg shadow-md p-8">
-          <img src={image} className="w-100 h-80 pb-10" />
+        <div className="backdrop-blur-sm rounded-xl shadow-md p-8 bg-lime-100">
+          <img src={image} className="w-100 h-80  rounded-xl" />
           <h2 className="text-xl font-semibold mb-4">Most Likely Species:</h2>
           <p className="text-gray-700 mb-2">
             Scientific Name: {aiResponse.most_likely_species.scientific_name}
