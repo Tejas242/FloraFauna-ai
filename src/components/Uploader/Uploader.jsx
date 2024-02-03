@@ -14,7 +14,7 @@ const UploadSection = ({
 
     <div className="w-full max-w-md mx-auto text-center">
       <form onClick={() => document.querySelector(".input-field").click()}>
-        <div className="flex items-center justify-center w-full mb-6 backdrop-blur-lg mt-8">
+        <div className="flex flex-col items-center justify-center w-full mb-6 backdrop-blur-lg mt-8">
           {image ? (
             <img
               src={image}
