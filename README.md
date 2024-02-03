@@ -1,6 +1,8 @@
 # FloraFauna.ai - A Species Identification App
 This web application leverages Generative AI to assist users in identifying and learning about plant and animal species they encounter in their environment. By combining the power of Gemini API and React, we aim to promote citizen science and conservation efforts by making species identification accessible and engaging.
 
+https://github.com/Tejas242/FloraFauna-ai/assets/59790915/addd4633-9264-4936-bc71-c63f9e4dfc18
+
 ## Table of Contents
 - [Features](#features)
 - [Technologies Used](#technologies-used)
