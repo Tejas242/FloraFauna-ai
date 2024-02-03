@@ -1,8 +1,7 @@
 import { useEffect, useRef , useState } from "react";
 import { useLocation } from "react-router-dom";
-import ScrollReveal from "scrollreveal";
-import ClipLoader from "react-spinners/ClipLoader";
-import bg1 from '../assets/Animal.jpg'
+import ScaleLoader from "react-spinners/ScaleLoader";
+// import bg1 from '../assets/Animal.jpg'
 
 
 
@@ -11,46 +10,30 @@ const AIResponse = () => {
   const { aiResponse, image } = useLocation().state;
   const [loading, setLoading] = useState(true);
 
-  const style = {
-      backgroundImage: `url(${bg1})`,
-      backgroundPosition: 'center',
-      backgroundSize: 'cover',
-      backgroundRepeat: 'no-repeat',
-    }
+  // const style = {
+  //     backgroundImage: `url(${bg1})`,
+  //     backgroundPosition: 'center',
+  //     backgroundSize: 'cover',
+  //     backgroundRepeat: 'no-repeat',
+  //   }
 
   useEffect(() => {
     const timeout = setTimeout(() => {
       setLoading(false);
-    }, 1000); // Set loading time to 2 seconds
+    }, 2000); // Set loading time to 2 seconds
 
     return () => clearTimeout(timeout);
-  }, []);
-
-
-  useEffect(() => {
-    const sr = ScrollReveal({
-      origin: "bottom",
-      distance: "60px",
-      duration: 2500,
-      delay: 400,
-    });
-
-    sr.reveal(aiResponseRef.current, {
-      interval: 100,
-      viewFactor: 0.5,
-    });
   }, []);
 
   if (loading) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <ClipLoader size={50} color={"#123abc"} loading={loading} />
+        <ScaleLoader size={50} color={"#123abc"} loading={loading} />
       </div>
     );
   }
 
   return (
-    <main style={style}>
     <div className="lg:container mx-auto py-8" ref={aiResponseRef}>
       {!aiResponse && (
         <div className="text-center text-gray-600">
@@ -141,7 +124,6 @@ const AIResponse = () => {
         </div>
       )}
     </div>
-    </main>
   );
 };
 

@@ -7,11 +7,9 @@ const Header = () => {
         <h1 className="text-2xl font-bold text-white">FloraFauna.ai</h1>
         </NavLink>
         <nav className="flex items-center text-white">
-          <button className='w-[10rem] py-[8px] rounded-3xl bg-[#98EC65] hover:bg-[#81E047] mt-[1rem]'>
-          <a href="https://github.com/Tejas242/FloraFauna-ai">
+          <a href="https://github.com/Tejas242/FloraFauna-ai" className="px-3">
             Github
           </a>
-          </button>
         </nav>
       </header>
     );

@@ -4,7 +4,7 @@ import { getBase64 } from "../helpers/imageHelper";
 import UploadSection from "./Uploader/Uploader";
 import { useNavigate } from "react-router-dom";
 import prompt from "@/assets/prompt";
-import ClipLoader from "react-spinners/ClipLoader";
+import ScaleLoader from "react-spinners/ScaleLoader";
 
 const SpeciesInfo = () => {
   const genAI = new GoogleGenerativeAI(import.meta.env.VITE_API_KEY);
@@ -18,7 +18,7 @@ const SpeciesInfo = () => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setLoading(false);
-    }, 1000); // Set loading time to 2 seconds
+    }, 2000); // Set loading time to 2 seconds
 
     return () => clearTimeout(timeout);
   }, []);
@@ -84,7 +84,7 @@ const SpeciesInfo = () => {
   if (loading) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <ClipLoader size={50} color={"#ffffff"} loading={loading} />
+        <ScaleLoader size={50} color={"#ffffff"} loading={loading} />
       </div>
     );
   }
