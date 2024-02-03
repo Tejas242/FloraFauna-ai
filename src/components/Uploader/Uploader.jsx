@@ -21,10 +21,10 @@ const UploadSection = ({
               width={300}
               height={300}
               alt={fileName}
-              className="rounded-lg"
+              className="rounded-xl"
             />
           ) : (
-            <div className="border-2 border-white w-full h-full border-dotted rounded-lg py-12 cursor-pointer flex flex-col items-center">
+            <div className="border-2 border-white w-full h-full border-dotted rounded-xl py-12 cursor-pointer flex flex-col items-center">
               <MdCloudUpload color="#06b6d4" size={60} className="mb-4" />
               <input
                 type="file"
