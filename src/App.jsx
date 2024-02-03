@@ -1,27 +1,28 @@
-import './App.css'
-import Header from './components/Header'
-import Hero from './components/Hero'
-import Footer from './components/Footer'
-import { useEffect, useState } from "react";
-import ScrollReveal from "scrollreveal";
-
+import "./App.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import bg from "./assets/Plant.jpg";
+import Hero from "./components/Hero";
+import Output from "./components/Output";
 
 function App() {
-  // const [showScrollUp, setShowScrollUp] = useState(false);
-  // const sections = document.querySelectorAll("section[id]");
-
-  // sr.reveal(`.footer-container`, { origin: "bottom", delay: 500 });
-  // sr.reveal(`.species-info-container`, { origin: "bottom", delay: 500 });
+  const style = {
+    backgroundImage: `url(${bg})`,
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+  };
 
   return (
-    <main>
-      
-      <Header />
-      <Hero />
-      <Footer/>
-    </main>
-    
-  )
+    <>
+      <main style={style}>
+        <Header />
+        <Hero/>
+        <Output/>
+        <Footer />
+      </main>
+    </>
+  );
 }
 
-export default App
+export default App;
